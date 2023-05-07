@@ -1,0 +1,28 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.841);
+    color: white;
+    padding: 0.5rem 0;
+}
+.header>div:first-child{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+}
+.header a,.header .btn{
+    color: white;
+    text-decoration: none;
+    background-color: inherit;
+    border: none;
+}
+
+.header article a,.header article .btn{
+    padding: 0.5rem 2rem;
+    margin-right:0.5rem;
+    font-weight: bold;
+}
+.header article a:hover,.header article .btn:hover{
+    background-color: white;
+    color: black;
+}
