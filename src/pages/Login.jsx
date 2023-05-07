@@ -25,11 +25,11 @@ function Login() {
                 withCredentials:true
             })
             setIsAuthenticated(true);
-            setLoading(true)
+            setLoading(false)
             toast.success(data.message);
         } catch (error) {
             setIsAuthenticated(false);
-            setLoading(true)
+            setLoading(false)
             toast.error(error.response.data.message);
         }
     }

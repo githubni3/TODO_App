@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/Loader.css'
-import loadingGIF from '../assets/Loader.gif'
+import loadingGIF from '../assets/loading.gif'
 
 function Loader() {
   return (

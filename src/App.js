@@ -6,8 +6,26 @@ import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { Toaster } from 'react-hot-toast';
+import { useContext, useEffect } from 'react';
+import { Context, server } from '.';
+import axios from 'axios';
 
 function App() {
+
+  const {setUser,setIsAuthenticated} = useContext(Context)
+
+  useEffect(()=>{
+    axios.get(`${server}/user/profile`,{
+      withCredentials:true
+    }).then((res)=>{
+      setUser(res.data.user);
+      setIsAuthenticated(true);
+    }).catch((error)=>{
+      setUser({})
+      setIsAuthenticated(false);
+    })
+  },[])
+
   return (
     <Router>
       <Header/>

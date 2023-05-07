@@ -1,0 +1,36 @@
+.taskCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-bottom: 1px solid grey;
+    margin-top: 1rem;
+    background-color: rgb(229 229 229);
+}
+
+.taskCard>div > div:first-child{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.taskCard div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.taskCard div input{
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-right: 1rem;
+}
+.btn{
+    background-color: rgba(0, 0, 0, 0.841);
+    padding: 0.35rem 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}

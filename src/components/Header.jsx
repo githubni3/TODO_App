@@ -13,14 +13,13 @@ function Header() {
       const {data} = await axios.get(`${server}/user/logout`,{
         withCredentials:true
       })
-      console.log("first")
       setIsAuthenticated(false)
       setLoading(false)
       toast.success(data.message);
     } catch (error) {
-      console.log("firt")
 
       setIsAuthenticated(true);
+
       setLoading(false)
       toast.error(error.response.data.message);
     }
@@ -36,7 +35,7 @@ function Header() {
             <Link to={"/profile"}>Profile</Link>
             {
               isAuthenticated? 
-              <button disabled={!loading} onClick={logoutHandler} className='btn'>Logout</button>:
+              <button disabled={loading} onClick={logoutHandler} className='btn'>Logout</button>:
               <Link to={"/login"}>Login</Link>
           }
         </article>
