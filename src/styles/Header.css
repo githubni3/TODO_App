@@ -26,3 +26,9 @@
     background-color: white;
     color: black;
 }
+
+@media screen and (max-width:500px){
+    .header article a, .header article .btn {
+        padding: 0.25rem 0.5rem;
+    }
+}
