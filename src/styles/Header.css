@@ -1,16 +1,20 @@
-.header{
+:root{
+    --header-color:rgba(0, 0, 0);
+}
+.mob_header,.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.841);
+    background-color: var(--header-color);
     color: white;
     padding: 0.5rem 0;
+    position: relative;
 }
-.header>div:first-child{
+.mob_header a,.header>div:first-child{
     margin-left: 2rem;
     font-size: 1.5rem;
 }
-.header a,.header .btn{
+.mob_header a,.header a,.mob_header .btn,.header .btn{
     color: white;
     text-decoration: none;
     background-color: inherit;
@@ -27,8 +31,75 @@
     color: black;
 }
 
+.mob_sidebar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    background-color: var(--header-color);
+    display: flex;
+    flex-direction: column;
+    width: 65vw;
+    padding-top: 2.5rem;
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+
+
+}
+.mob_sidebar > *{
+    margin-top: 1em;
+}
+.mob_header .btn{
+    font-size: 1.25rem;
+    text-align: left;
+    margin-left: 0.6rem;
+}
+.hamburger{
+    position: absolute;
+    top: 0.3rem;
+    right: 1.5rem;
+    z-index: 1;
+    
+}
+.hamburger div,.hamburger_lines{
+    background-color: white;
+    padding: 0.1rem 1rem;
+    border-radius: 1rem;
+    margin: 0.4rem;
+    transition: all 0.5s ease-in-out;
+
+}
+
+.hamburger_cross div:nth-child(1){
+    transform: rotate(45deg) translateY(0.5rem) translateX(0.3rem);
+}
+.hamburger_cross div:nth-child(2){
+    visibility: hidden;
+}
+.hamburger_cross div:nth-child(3){
+    transform: rotate(-45deg) translateY(-0.55rem) translateX(0.3rem);
+    
+}
+
+.mob_header{
+    display: none;
+}
+.hide{
+    opacity: 0;
+    transform: translateY(-120vh);
+    /* z-index: -1; */
+    /* display: none; */
+}
+
+
 @media screen and (max-width:500px){
-    .header article a, .header article .btn {
-        padding: 0.25rem 0.5rem;
+    .header{
+        display: none;
+    }
+    .mob_header{
+        display: block;
+    }
+    .mob_header>div{
+        display: inline;
     }
 }

@@ -53,6 +53,16 @@
 }
 
 
+
+@media screen and (max-width:992px){
+    .form{
+        width: 70vw;
+    }
+    .Form {
+        width: 90%;
+    }
+}
+
 @media screen and (max-width:500px){
     .form{
         width: 90vw;

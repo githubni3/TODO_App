@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import { Context } from '..'
-import Loader from '../components/Loader'
 import '../styles/profile.css'
+import { Navigate } from 'react-router-dom'
 
 function Profile() {
-  const {loading,user} = useContext(Context)
+  const {user,isAuthenticated} = useContext(Context)
+  
+  if(!isAuthenticated) return <Navigate to={"/login"}/>
+  
   return (
-    loading ? <Loader/> :
     <div className='profile_details'>
       <h1>{user&&user.name}</h1>
       <h3>{user&&user.email}</h3>

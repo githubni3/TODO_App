@@ -13,8 +13,8 @@ function Todoitem({
   return (
     <div className="taskCard">
       <div>
-        <div key={key}>{title}</div>
-        <p>{description}</p>
+        <span key={key}>{title}</span>
+        <span>{description}</span>
       </div>
       <div>
         <input onChange={()=>updateHandler(id)} type="checkbox" checked={isCompleted} />

@@ -8,7 +8,11 @@
     background-color: rgb(229 229 229);
 }
 
-.taskCard>div > div:first-child{
+.taskCard>div{
+    display: flex;
+    flex-direction: column;
+}
+.taskCard>div > span:first-child{
     font-size: 1.3rem;
     font-weight: bold;
 }
@@ -17,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 }
 .taskCard div input{
     height: 1.3rem;
@@ -33,4 +38,19 @@
     background-color: white;
     border: 1px solid black;
     color: black;
+}
+
+@media screen and (max-width:500px) {
+    .taskCard{
+        flex-direction: column;
+    }
+    .taskCard div:first-child{
+        width: 98%;
+    }
+    .taskCard div:nth-child(2){
+        align-self: flex-start;
+    }
+    .taskCard div:nth-child(2) {
+        margin-top: 1rem;
+    }
 }
