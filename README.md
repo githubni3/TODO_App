@@ -1,2 +1,3 @@
-# Todo App with backend
+# Todo App 
+### A MERN Project
 
